@@ -6,12 +6,55 @@
     <title>Document</title>
 </head>
 <body>
-    <input placeholder="Digite o nome">
-    <p>Resultado</p>
-    <button onclick="search()">Procurar Contato</button>
+    <div class="corpo">
+        <h1>Agenda</h1>
+        <input placeholder="Digite o nome ou telefone"><br><br>
+        <button onclick="search()">Procurar</button>
+
+            <p class="resultado"></p>
+            <p class="nome">Nome:</p>
+            <p class="tel"> Tel:</p>
+            
+          
+    </div>
+   
 </body>
+<style>
+    h1{
+        text-align: center;
+    }
+    .corpo{
+        width: 25%;
+        height: 250px;
+        margin: 15px auto;
+        padding: 5px;
+        background-color: aqua;
+        border-radius: 05px;
+    }
+    .resultado{
+        
+    }
+    input{
+        width: 50%;
+        height: 25px;
+        border-radius: 3px;
+        border: none;
+        outline: none;
+    }
+    .nome{
+        background-color: white;
+        padding:2px
+    }
+    .tel{
+        background-color: white;
+        padding:2px;
+        height: 20px;    
+    }
+</style>
 <script>
-    let p = document.querySelector('p')
+    let p = document.querySelector('.nome')
+    let t = document.querySelector('.tel')
+    let r = document.querySelector('.resultado')
     let input = document.querySelector('input')
 
     const contacts = [
@@ -25,7 +68,8 @@
       
         for (let i =0; i< contacts.length;i++){
             if(input.value.toLocaleLowerCase()===contacts[i].name.toLocaleLowerCase()){
-                p.innerHTML = `Contato Encontrado<br><br> Nome: ${contacts[i].name}<br><br> Tel:${contacts[i].number}`
+                p.innerHTML = ` Nome: ${contacts[i].name} `
+                t.innerHTML=`Tel:${contacts[i].number}`
                 break
                 
             }else if(input.value.toLocaleLowerCase()===contacts[i].number.toLocaleLowerCase()){
@@ -34,6 +78,7 @@
             }
             else{
                 p.innerHTML="Contato nao encontrado"
+                t.innerHTML = ""
             }
         }
     }
