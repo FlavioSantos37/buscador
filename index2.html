@@ -10,14 +10,20 @@
     <div class="container">
         <h1>Cadastro</h1>
 
-           <form >
-            Nome:    <input class="input" type="text"><br><br>
-            Idade:   <input class="input" type="text"><br><br>
-            Tel:     <input class="input" type="text"><br><br>
-            Ocupação      <input class="input" type="text"><br><br>
-            <button class="btn">Salvar</button>
+           <form id="formulario" >
+            <label>Nome:</label>
+            <input class="input" type="text" name="nome_usuario" id="nome_usuario"><br><br>
+            <label>Idade:</label>
+            <input class="input" type="text" name="idade_usuario" id="idade_usuario"><br><br>
+            <label>Tel:</label>
+            <input class="input" type="text" name="tel_usuario" id="tel_usuario"><br><br>
+            <label>Ocupação:</label>
+            <input class="input" type="text" name="ocupacao_usuario" id="ocupacao_usuario"><br><br>
+            
+            <input type="submit" value="Cadastrar"><br><br>
            </form> 
           
     </div>
+    <script src="custom.js"></script>
 </body>
 </html>
